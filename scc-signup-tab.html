@@ -3,10 +3,10 @@
 $(function(){
     var component_ID = {
         type: "tab",
-        version: 1.1,
+        version: 1.0,
         kind: "component",
-        name: "scc-singup-tab.html",
-        description: "socketCluster new user sign up.",
+        name: "singup.html",
+        description: "user sign up.",
     };
 });
 
@@ -64,14 +64,9 @@ $(function(){
 <script>
 (function(){
 
-    $("#login-account").on("click", function(){
+    $("#login-account, #signup-cancel-btn").on("click", function(){
         $("#login-tab").children().remove();
-        $("#login-tab").load("/components/scc-login-tab.html");
-    });
-
-    $("#signup-cancel-btn").on("click", function(){
-        $("#login-tab").children().remove();
-        $("#login-tab").load("/components/scc-login-tab.html");
+        $("#login-tab").load("/login-tab/login.html");
     });
 
 })();
