@@ -3,9 +3,9 @@
 $(function(){
     var component_ID = {
         type: "tab",
-        version: 1.1,
+        version: 1.0,
         kind: "component",
-        name: "scc-login-tab.html",
+        name: "login.html",
         description: "socketCluster user login.",
     };
 });
@@ -49,7 +49,7 @@ $(function(){
     </div>
 
     <div class="form-group">
-        <a id="login-btn" name="submit" class="btn btn-success btn-white-outline pull-right" >Login</a>
+        <a id="login-btn" name="submit" class="btn btn-success btn-white-outline pull-right">Login</a>
         <a id="forgot-password">Forgot Password?</a><br>
         <a id="create-account">Do not have an Account?</a>
     </div>
@@ -62,7 +62,7 @@ $(function(){
 
     $("#create-account").on("click", function(){
         $("#login-tab").children().remove();
-        $("#login-tab").load("/components/scc-signup-tab.html");
+        $("#login-tab").load("/login-tab/signup.html");
     });
 
 })();
