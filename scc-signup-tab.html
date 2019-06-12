@@ -1,0 +1,78 @@
+<script>
+
+$(function(){
+    var component_ID = {
+        type: "tab",
+        version: 1.1,
+        kind: "component",
+        name: "scc-singup-tab.html",
+        description: "socketCluster new user sign up.",
+    };
+});
+
+</script>
+
+<style>
+
+    #login-account,
+    #create-account,
+    #forgot-password {
+        color:#ffffff;
+        cursor:pointer;
+    }
+
+    .btn.pull-right + .btn.pull-right {
+        margin-right:5px;
+    }
+
+    a#signup-submit-btn:link, a#signup-submit-btn:visited, 
+    a#signup-submit-btn:hover, a#signup-submit-btn:active  {
+        color:#ffffff; text-decoration:initial;
+    }
+
+</style>
+
+<form id="signup-form">
+
+    <h2>SignUp</h2>
+
+    <h4>Create a New Account</h4>
+
+    <div class="form-group">
+        <div class="signup-label">*Email</div>
+        <input type="email" class="form-control" id="email" name="email" required title="Type your email">
+    </div>
+
+    <div class="form-group">
+        <div class="login-label">*Username</div>
+        <input type="text" class="form-control" id="username" name="username" required title="Type your username">
+    </div>
+
+    <div class="form-group">
+        <div class="signup-label">*Password</div>
+        <input type="password" class="form-control" id="password" name="password" required title="Type your password">
+    </div>
+
+    <div class="form-group">
+        <a id="login-account">Already have Account?</a>
+        <a id="signup-submit-btn" name="submit" class="btn btn-success btn-white-outline pull-right">SignUp</a>
+        <a id="signup-cancel-btn" class="btn btn-default pull-right hidden">Cancel</a>
+    </div>
+
+</form>
+
+<script>
+(function(){
+
+    $("#login-account").on("click", function(){
+        $("#login-tab").children().remove();
+        $("#login-tab").load("/components/scc-login-tab.html");
+    });
+
+    $("#signup-cancel-btn").on("click", function(){
+        $("#login-tab").children().remove();
+        $("#login-tab").load("/components/scc-login-tab.html");
+    });
+
+})();
+</script>

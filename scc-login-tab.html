@@ -1,0 +1,69 @@
+<script>
+
+$(function(){
+    var component_ID = {
+        type: "tab",
+        version: 1.1,
+        kind: "component",
+        name: "scc-login-tab.html",
+        description: "socketCluster user login.",
+    };
+});
+
+</script>
+
+<style>
+
+    #login-account,
+    #create-account,
+    #forgot-password {
+        color:#ffffff;
+        cursor:pointer;
+    }
+
+    .btn.pull-right + .btn.pull-right {
+        margin-right:5px;
+    }
+
+    a#login-btn:link, a#login-btn:visited, 
+    a#login-btn:hover, a#login-btn:active {
+        color:#ffffff; text-decoration:initial;
+    }
+
+</style>
+
+<form id="login-form">
+
+    <h2>Welcome back!</h2>
+
+    <h4>Please Login To Your Account</h4>
+
+    <div class="form-group">
+        <div class="login-label">Username or email</div>
+        <input type="text" class="form-control" id="username" name="username" required autofocus title="Type your username or email">
+    </div>
+
+    <div class="form-group">
+        <div class="login-label">Password</div>
+        <input type="password" class="form-control" id="password" name="password" required autofocus title="Type your password">
+    </div>
+
+    <div class="form-group">
+        <a id="login-btn" name="submit" class="btn btn-success btn-white-outline pull-right" >Login</a>
+        <a id="forgot-password">Forgot Password?</a><br>
+        <a id="create-account">Do not have an Account?</a>
+    </div>
+
+</form>
+
+
+<script>
+(function(){
+
+    $("#create-account").on("click", function(){
+        $("#login-tab").children().remove();
+        $("#login-tab").load("/components/scc-signup-tab.html");
+    });
+
+})();
+</script>
